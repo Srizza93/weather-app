@@ -1,13 +1,15 @@
 <template>
   <div class="sub-root">
     <header class="header">
-      <img
-        alt="App logo"
-        class="logo"
-        src="@/assets/weather-icon.svg"
-        width="200"
-        height="200"
-      />
+      <router-link to="/">
+        <img
+          alt="App logo"
+          class="logo"
+          src="@/assets/weather-icon.svg"
+          width="200"
+          height="200"
+        />
+      </router-link>
 
       <div class="wrapper">
         <RouterLink class="wrapper_link" to="/">Home</RouterLink>

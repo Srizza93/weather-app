@@ -1,13 +1,22 @@
 <template>
-  <div>
-    Weather Component
-    <span>{{ weather }}</span>
+  <div class="weather">
+    <card class="card-wrapper" :info="weather.location" />
+    <img
+      class="weather-icon"
+      v-if="weather.current"
+      :src="weather.current.condition.icon"
+      alt="weather-icon"
+    />
+    <card class="card-wrapper" :info="weather.current" />
   </div>
 </template>
 
 <script>
+import Card from "../components/Card.vue";
+
 export default {
   name: "Weather",
+  components: { Card },
   data() {
     return {
       weather: {},
@@ -46,4 +55,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-wrapper {
+  padding: $standard-distance;
+  margin: $standard-distance;
+  border: 1px solid rgba(235, 235, 235, 0.64);
+}
+
+.weather-icon {
+  width: 100px;
+}
+</style>
