@@ -42,6 +42,7 @@ export default {
           .then((data) => (this.weather = data));
       } catch (error) {
         console.log("Can't get data from API: " + error);
+        this.redirectToNotFound();
       }
     },
     redirectToNotFound() {
@@ -60,11 +61,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 60px;
 }
 .card-wrapper {
   padding: $standard-distance;
   margin: $standard-distance;
-  border: 1px solid rgba(235, 235, 235, 0.64);
+  border: $border-color;
 }
 
 .weather-icon {

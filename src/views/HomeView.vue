@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home-container {
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ export default {
   height: 35px;
   padding: 0 10px;
   border-radius: 10px 0 0 10px;
-  border: none;
+  border: 1px solid $primary-color;
   border-right: solid #181818 1px;
   font-size: 18px;
 }
