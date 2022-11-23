@@ -26,7 +26,7 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const url = `http://api.weatherapi.com/v1/current.json?key=9090010261984f75bd8163005222011&q=${this.city}&aqi=no`;
+        const url = `https://api.weatherapi.com/v1/current.json?key=9090010261984f75bd8163005222011&q=${this.city}&aqi=no`;
         const response = await fetch(url)
           .then((response) => {
             if (response.ok) {
