@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s,p as c,g as _,a as n}from"./index.434c2cce.js";const a={name:"NotFound"},d=o=>(c("data-v-2b345cb9"),o=o(),_(),o),p={class:"not-found"},r=d(()=>n("h2",null,"Page not found",-1)),u=[r];function i(o,l,f,h,b,m){return t(),s("div",p,u)}const x=e(a,[["render",i],["__scopeId","data-v-2b345cb9"]]);export{x as default};
