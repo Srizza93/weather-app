@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/global";
+
 .home-container {
   display: flex;
   justify-content: center;
@@ -52,7 +54,7 @@ export default {
   height: 35px;
   padding: 0 10px;
   border-radius: 10px 0 0 10px;
-  border: 1px solid $primary-color;
+  border: 1px solid global.$primary-color;
   border-right: solid #181818 1px;
   font-size: 18px;
 }
@@ -70,13 +72,15 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+@use "@/assets/global";
+
 .input-container_button-wrap {
   display: flex;
   align-items: center;
   border-radius: 0 10px 10px 0;
-  background-color: $primary-color;
+  background-color: global.$primary-color;
 }
 .input-container_button-wrap_button {
-  color: $secondary-color;
+  color: global.$secondary-color;
 }
 </style>

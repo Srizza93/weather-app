@@ -27,7 +27,7 @@ export default {
     async fetchData() {
       try {
         const url = `https://api.weatherapi.com/v1/current.json?key=9090010261984f75bd8163005222011&q=${this.city}&aqi=no`;
-        const response = await fetch(url)
+        await fetch(url)
           .then((response) => {
             if (response.ok) {
               return response.json();
@@ -57,6 +57,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/global";
+
 .weather {
   display: flex;
   flex-direction: column;
@@ -64,9 +66,9 @@ export default {
   margin-top: 60px;
 }
 .card-wrapper {
-  padding: $standard-distance;
-  margin: $standard-distance;
-  border: $border-color;
+  padding: global.$standard-distance;
+  margin: global.$standard-distance;
+  border: global.$border-color;
 }
 
 .weather-icon {
