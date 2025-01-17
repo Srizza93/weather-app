@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .sub-root {
   display: flex;
   flex-direction: column;
@@ -52,13 +52,15 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+@use "@/assets/global";
+
 .scss-class {
   background-color: blue;
-  font: 100% $font-stack;
-  color: $primary-color;
+  font: 100% global.$font-stack;
+  color: global.$primary-color;
 }
 
 .wrapper_link:hover {
-  background-color: $link-color;
+  background-color: global.$link-color;
 }
 </style>

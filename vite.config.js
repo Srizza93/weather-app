@@ -1,27 +1,28 @@
 import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: "/weather-app/",
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/assets/_style.scss";`,
+export default defineConfig(async () => {
+  const { viteStaticCopy } = await import("vite-plugin-static-copy");
+
+  return {
+    base: "/weather-app/",
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
     },
-  },
+    plugins: [
+      vue(),
+      viteStaticCopy({
+        targets: [
+          {
+            src: "dist/index.html",
+            dest: ".",
+            rename: "404.html",
+          },
+        ],
+      }),
+    ],
+  };
 });
-
-// GH PAGES
-// git add dist -f
-// git commit -m "adding dist"
-// git subtree push --prefix dist origin gh-pages
